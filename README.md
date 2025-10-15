@@ -5,6 +5,11 @@
 **Instructor:** Ing. Jeronimo Jaramillo Bejarano  
 **Fecha:** Octubre 15 de 2025
 
+## Autores
+
+**Miguel Angel Luna Garcia** - Estudiante de Ingeniería Mecatrónica
+**Gustavo Adolfo Quintero Bedoya** - Estudiante de Ingeniería Mecatrónica
+
 ## Objetivo
 
 Familiarizar a los estudiantes con las estructuras básicas de decisión (`if`, `else`, `switch case`) de la programación en lenguaje C para microcontroladores.
@@ -427,11 +432,6 @@ Resistencia (R): 24.0000 Ω (Ohmios)
 - Actualiza las librerías del core de ESP32
 
 ---
-
-## Autores
-
-**Miguel Angel Luna Garcia** - Estudiante de Ingeniería Mecatrónica
-**Gustavo Adolfo Quintero Bedoya** - Estudiante de Ingeniería Mecatrónica
 
 ## Licencia
 
