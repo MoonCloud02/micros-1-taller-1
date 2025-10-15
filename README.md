@@ -13,8 +13,8 @@ Familiarizar a los estudiantes con las estructuras básicas de decisión (`if`, 
 
 - **Hardware:** ESP32
 - **Software:** Arduino IDE
-- **Herramienta de diagramas:** Mermaid (integrado en GitHub)
-- **Control de versiones:** Git/GitHub/GitLab
+- **Herramienta de diagramas:** yED (para diagramas de flujo)
+- **Control de versiones:** Git/GitHub
 
 ## Estructura del Proyecto
 
@@ -171,3 +171,268 @@ Cada programa incluye funciones reutilizables:
 - División por cero (Ejercicio 5)
 - Conversión de valores negativos a positivos donde aplique
 - Limpieza de buffer serial
+
+---
+
+## Diagramas de Flujo
+
+A continuación se presentan los diagramas de flujo para cada ejercicio en formato Mermaid, que se pueden visualizar directamente en GitHub.
+
+### Ejercicio 1: Cálculo de Nota Definitiva
+
+```mermaid
+flowchart TD
+    Start([Inicio]) --> Init[Inicializar Serial<br/>115200 baudios]
+    Init --> Input1[/Leer Parcial 1/]
+    Input1 --> Valid1{¿Nota válida<br/>0-5?}
+    Valid1 -->|No| Input1
+    Valid1 -->|Sí| Input2[/Leer Parcial 2/]
+    Input2 --> Valid2{¿Nota válida<br/>0-5?}
+    Valid2 -->|No| Input2
+    Valid2 -->|Sí| Input3[/Leer Parcial 3/]
+    Input3 --> Valid3{¿Nota válida<br/>0-5?}
+    Valid3 -->|No| Input3
+    Valid3 -->|Sí| Input4[/Leer Examen Final/]
+    Input4 --> Valid4{¿Nota válida<br/>0-5?}
+    Valid4 -->|No| Input4
+    Valid4 -->|Sí| Calc[Calcular Nota Definitiva<br/>P1×0.3 + P2×0.2 + P3×0.2 + EF×0.3]
+    Calc --> ShowData[/Mostrar todas las notas/]
+    ShowData --> Decision1{Nota >= 3.0?}
+    Decision1 -->|Sí| Aprueba[/Mostrar: APRUEBA/]
+    Decision1 -->|No| Decision2{Nota >= 2.5?}
+    Decision2 -->|Sí| Reprueba[/Mostrar: REPRUEBA/]
+    Decision2 -->|No| Transicion[/Mostrar: TRANSICIÓN/]
+    Aprueba --> Wait[/Esperar Enter/]
+    Reprueba --> Wait
+    Transicion --> Wait
+    Wait --> Input1
+```
+
+### Ejercicio 2: Clasificador de Números
+
+```mermaid
+flowchart TD
+    Start([Inicio]) --> Init[Inicializar Serial<br/>115200 baudios]
+    Init --> Input[/Leer número real/]
+    Input --> Show[/Mostrar número ingresado/]
+    Show --> Check{¿Número > 0?}
+    Check -->|Sí| Positive[/Mostrar: POSITIVO/]
+    Check -->|No| CheckNeg{¿Número < 0?}
+    CheckNeg -->|Sí| Negative[/Mostrar: NEGATIVO/]
+    CheckNeg -->|No| Zero[/Mostrar: CERO/]
+    Positive --> Wait[/Esperar Enter/]
+    Negative --> Wait
+    Zero --> Wait
+    Wait --> Input
+```
+
+### Ejercicio 3: Cálculo de Salario Neto
+
+```mermaid
+flowchart TD
+    Start([Inicio]) --> Init[Inicializar Serial<br/>115200 baudios]
+    Init --> Input1[/Leer Salario Base/]
+    Input1 --> Valid{¿Salario > 0?}
+    Valid -->|No| Input1
+    Valid -->|Sí| Menu[/Mostrar menú de categorías 1-4/]
+    Menu --> Input2[/Leer Categoría/]
+    Input2 --> Switch{Categoría}
+    Switch -->|1| Cat1[Bonificación = 15%<br/>Descuento = 4%]
+    Switch -->|2| Cat2[Bonificación = 13%<br/>Descuento = 3%]
+    Switch -->|3| Cat3[Bonificación = 12%<br/>Descuento = 2%]
+    Switch -->|4| Cat4[Bonificación = 9.5%<br/>Descuento = 0%]
+    Switch -->|Otro| Default[Usar categoría 4<br/>por defecto]
+    Cat1 --> Calc[Calcular:<br/>Salario + Bonificación = Subtotal<br/>Subtotal - Descuento = Neto]
+    Cat2 --> Calc
+    Cat3 --> Calc
+    Cat4 --> Calc
+    Default --> Calc
+    Calc --> Display[/Mostrar desglose completo:<br/>Base, Bonificación, Descuento, Neto/]
+    Display --> Wait[/Esperar Enter/]
+    Wait --> Input1
+```
+
+### Ejercicio 4: Operaciones con Tres Números
+
+```mermaid
+flowchart TD
+    Start([Inicio]) --> Init[Inicializar Serial<br/>115200 baudios]
+    Init --> Input1[/Leer Número 1/]
+    Input1 --> Input2[/Leer Número 2/]
+    Input2 --> Input3[/Leer Número 3/]
+    Input3 --> Show[/Mostrar los 3 números/]
+    Show --> Menu[/Mostrar menú:<br/>1-Promedio, 2-Mayor<br/>3-Menor, 4-Par/Impar/]
+    Menu --> InputOp[/Leer Opción/]
+    InputOp --> Switch{Opción}
+    
+    Switch -->|1| Op1[Calcular:<br/>Promedio = Suma/3]
+    Op1 --> Display1[/Mostrar Promedio/]
+    
+    Switch -->|2| Op2[Comparar números<br/>Encontrar el Mayor]
+    Op2 --> Display2[/Mostrar Mayor/]
+    
+    Switch -->|3| Op3[Comparar números<br/>Encontrar el Menor]
+    Op3 --> Display3[/Mostrar Menor/]
+    
+    Switch -->|4| Op4[Verificar cada número:<br/>¿n % 2 == 0?<br/>Contar pares e impares]
+    Op4 --> Display4[/Mostrar conteo:<br/>Pares e Impares/]
+    
+    Switch -->|Otro| Error[/Mostrar: Opción inválida/]
+    
+    Display1 --> Wait[/Esperar Enter/]
+    Display2 --> Wait
+    Display3 --> Wait
+    Display4 --> Wait
+    Error --> Wait
+    Wait --> Input1
+```
+
+### Ejercicio 5: Calculadora Ley de Ohm
+
+```mermaid
+flowchart TD
+    Start([Inicio]) --> Init[Inicializar Serial<br/>115200 baudios]
+    Init --> Menu[/Mostrar menú:<br/>1-Calcular R<br/>2-Calcular V<br/>3-Calcular I/]
+    Menu --> InputOp[/Leer Opción 1-3/]
+    InputOp --> Switch{Opción}
+    
+    Switch -->|1| InputV1[/Leer Voltaje V/]
+    InputV1 --> InputI1[/Leer Corriente I/]
+    InputI1 --> CheckI{¿I == 0?}
+    CheckI -->|Sí| ErrorDiv1[/Error: División por cero/]
+    CheckI -->|No| CalcR[Calcular: R = V / I]
+    CalcR --> DisplayR[/Mostrar R en Ohmios/]
+    
+    Switch -->|2| InputI2[/Leer Corriente I/]
+    InputI2 --> InputR2[/Leer Resistencia R/]
+    InputR2 --> CalcV[Calcular: V = I × R]
+    CalcV --> DisplayV[/Mostrar V en Voltios/]
+    
+    Switch -->|3| InputV3[/Leer Voltaje V/]
+    InputV3 --> InputR3[/Leer Resistencia R/]
+    InputR3 --> CheckR{¿R == 0?}
+    CheckR -->|Sí| ErrorDiv2[/Error: División por cero/]
+    CheckR -->|No| CalcI[Calcular: I = V / R]
+    CalcI --> DisplayI[/Mostrar I en Amperios/]
+    
+    Switch -->|Otro| ErrorOp[/Mostrar: Opción inválida/]
+    
+    DisplayR --> Wait[/Esperar Enter/]
+    DisplayV --> Wait
+    DisplayI --> Wait
+    ErrorDiv1 --> Wait
+    ErrorDiv2 --> Wait
+    ErrorOp --> Wait
+    Wait --> Menu
+```
+
+### Convenciones de los Diagramas
+
+Los diagramas utilizan las siguientes convenciones:
+- **Óvalos redondeados** `([...])`: Inicio/Fin
+- **Rectángulos** `[...]`: Procesos y cálculos
+- **Paralelogramos** `[/..../]`: Entrada/Salida
+- **Rombos** `{...}`: Decisiones
+- **Flechas**: Flujo del programa
+
+Estos diagramas se visualizan automáticamente en GitHub y pueden ser editados fácilmente.
+
+---
+
+## Control de Versiones (Git)
+
+### Inicialización del Repositorio original
+```powershell
+cd "d:\Users\migue\Documents\Tareas\Microcontroladores_1\micros-1-taller-1"
+git init
+git add .
+git commit -m "Initial commit"
+```
+
+### Creación del Repositorio en GitHub
+1. Creamos un nuevo repositorio en GitHub
+2. Conectamos el repositorio local:
+```powershell
+git remote add origin https://github.com/MiguelLuna02/micros-1-taller-1.git
+git branch -M main
+git push -u origin main
+```
+
+### .gitignore Recomendado
+```
+# Arduino
+*.hex
+*.elf
+*.bin
+
+# Build files
+build/
+*.o
+
+# OS
+.DS_Store
+Thumbs.db
+```
+
+---
+
+## Ejemplos de Uso
+
+### Ejercicio 1: Nota Definitiva
+```
+Ingrese la nota del primer parcial (0-5): 
+4.5
+Ingrese la nota del segundo parcial (0-5): 
+3.8
+Ingrese la nota del tercer parcial (0-5): 
+4.2
+Ingrese la nota del examen final (0-5): 
+4.0
+
+========== RESULTADOS ==========
+NOTA DEFINITIVA: 4.15
+Estado: APRUEBA ✓
+```
+
+### Ejercicio 5: Ley de Ohm
+```
+Opción (1-3): 1
+
+Ingrese el voltaje (V) en voltios: 12
+Ingrese la corriente (I) en amperios: 0.5
+
+========== RESULTADO ==========
+Voltaje (V): 12.0000 V
+Corriente (I): 0.5000 A
+-------------------------------
+Resistencia (R): 24.0000 Ω (Ohmios)
+===============================
+```
+
+---
+
+## Solución de Problemas
+
+### El monitor serial no muestra nada
+- Verifica que la velocidad sea **115200 baudios**
+- Asegúrate de que el puerto COM sea el correcto
+- Presiona el botón de reset en la ESP32
+
+### Los números no se leen correctamente
+- Asegúrate de presionar Enter después de ingresar el número
+- Verifica que no haya caracteres extra en la entrada
+
+### Error al compilar
+- Verifica que tengas instalado el soporte para ESP32 en Arduino IDE
+- Actualiza las librerías del core de ESP32
+
+---
+
+## Autores
+
+**Miguel Angel Luna Garcia** - Estudiante de Ingeniería Mecatrónica
+**Gustavo Adolfo Quintero Bedoya** - Estudiante de Ingeniería Mecatrónica
+
+## Licencia
+
+Este proyecto es parte de las actividades académicas del curso de Microcontroladores 1.
