@@ -1,0 +1,41 @@
+# Arduino Build Files
+*.hex
+*.elf
+*.bin
+*.eep
+*.lss
+*.map
+*.sym
+*.o
+*.d
+build/
+
+# IDE Files
+*.code-workspace
+.vscode/
+.idea/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Temporary Files
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Logs
+*.log
+
+# Directories
+__pycache__/
+*.pyc
+node_modules/
