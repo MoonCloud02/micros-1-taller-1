@@ -7,8 +7,8 @@
 
 ## Autores
 
-**Miguel Angel Luna Garcia** - Estudiante de Ingeniería Mecatrónica
-**Gustavo Adolfo Quintero Bedoya** - Estudiante de Ingeniería Mecatrónica
+- **Miguel Angel Luna Garcia** - Estudiante de Ingeniería Mecatrónica
+- **Gustavo Adolfo Quintero Bedoya** - Estudiante de Ingeniería Mecatrónica
 
 ## Objetivo
 
