@@ -41,7 +41,8 @@ micros-1-taller-1/
 ## Ejercicios
 
 ### Ejercicio 1: Cálculo de Nota Definitiva
-**Archivo:** `ejercicio1_nota_definitiva.ino`
+**Archivo:** `ejercicio1_nota_definitiva.ino`  
+**🔗 Simular en Wokwi:** [https://wokwi.com/projects/444913328045809665](https://wokwi.com/projects/444913328045809665)
 
 Calcula la nota definitiva de programación con los siguientes porcentajes:
 - Primer parcial: 30%
@@ -62,7 +63,8 @@ Calcula la nota definitiva de programación con los siguientes porcentajes:
 ---
 
 ### Ejercicio 2: Clasificador de Números
-**Archivo:** `ejercicio2_clasificar_numero.ino`
+**Archivo:** `ejercicio2_clasificar_numero.ino`  
+**🔗 Simular en Wokwi:** [https://wokwi.com/projects/444914215392864257](https://wokwi.com/projects/444914215392864257)
 
 Determina si un número real ingresado es:
 - **Positivo** (> 0)
@@ -77,7 +79,8 @@ Determina si un número real ingresado es:
 ---
 
 ### Ejercicio 3: Cálculo de Salario Neto
-**Archivo:** `ejercicio3_salario_neto.ino`
+**Archivo:** `ejercicio3_salario_neto.ino`  
+**🔗 Simular en Wokwi:** [https://wokwi.com/projects/444918370527618049](https://wokwi.com/projects/444918370527618049)
 
 Calcula el salario neto según la categoría del empleado:
 
@@ -97,7 +100,8 @@ Calcula el salario neto según la categoría del empleado:
 ---
 
 ### Ejercicio 4: Operaciones con Tres Números
-**Archivo:** `ejercicio4_operaciones_tres_numeros.ino`
+**Archivo:** `ejercicio4_operaciones_tres_numeros.ino`  
+**🔗 Simular en Wokwi:** [https://wokwi.com/projects/444918890478774273](https://wokwi.com/projects/444918890478774273)
 
 Menú de operaciones con tres números:
 1. **Calcular el promedio**
@@ -113,7 +117,8 @@ Menú de operaciones con tres números:
 ---
 
 ### Ejercicio 5: Calculadora Ley de Ohm
-**Archivo:** `ejercicio5_ley_ohm.ino`
+**Archivo:** `ejercicio5_ley_ohm.ino`  
+**🔗 Simular en Wokwi:** [https://wokwi.com/projects/444919024706998273](https://wokwi.com/projects/444919024706998273)
 
 Calculadora basada en la Ley de Ohm: **V = I × R**
 
@@ -127,6 +132,27 @@ Permite calcular:
 - Validación de divisiones por cero
 - Unidades claras (V, A, Ω)
 - Formato de salida profesional
+
+---
+
+## 🌐 Simulaciones en Wokwi
+
+Todos los ejercicios están disponibles para simular en línea sin necesidad de hardware físico:
+
+| Ejercicio | Descripción | Enlace Wokwi |
+|-----------|-------------|--------------|
+| **Ejercicio 1** | Cálculo de Nota Definitiva | [🔗 Simular](https://wokwi.com/projects/444913328045809665) |
+| **Ejercicio 2** | Clasificador de Números | [🔗 Simular](https://wokwi.com/projects/444914215392864257) |
+| **Ejercicio 3** | Cálculo de Salario Neto | [🔗 Simular](https://wokwi.com/projects/444918370527618049) |
+| **Ejercicio 4** | Operaciones con Tres Números | [🔗 Simular](https://wokwi.com/projects/444918890478774273) |
+| **Ejercicio 5** | Calculadora Ley de Ohm | [🔗 Simular](https://wokwi.com/projects/444919024706998273) |
+
+**Ventajas de Wokwi:**
+- ✅ No requiere hardware físico
+- ✅ Simulación en tiempo real
+- ✅ Monitor Serial integrado
+- ✅ Acceso desde cualquier navegador
+- ✅ Perfecto para pruebas rápidas
 
 ---
 
